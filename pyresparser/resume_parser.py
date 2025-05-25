@@ -18,7 +18,10 @@ class ResumeParser(object):
         custom_regex=None
     ):
         nlp = spacy.load('en_core_web_sm')
-        custom_nlp = spacy.load('en_core_web_sm')
+        custom_nlp = spacy.load("en_core_web_sm")
+
+
+
         self.__skills_file = skills_file
         self.__custom_regex = custom_regex
         self.__matcher = Matcher(nlp.vocab)
@@ -134,7 +137,7 @@ if __name__ == '__main__':
 
     resumes = []
     data = []
-    for root, directories, filenames in os.walk('resumes/'):
+    for root, directories, filenames in os.walk('resumes'):
         for filename in filenames:
             file = os.path.join(root, filename)
             resumes.append(file)
